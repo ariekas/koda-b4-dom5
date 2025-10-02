@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .calculator {
+            background: linear-gradient(135deg, rgb(219, 255, 111) 0%, #000000 100%);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto repeat(5, 1fr);
+            gap: 15px;
+            width: 320px;
+        }
+
+        .display {
+            grid-column: 1 / -1;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: right;
+            margin-bottom: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .display-text {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 300;
+            min-height: 40px;
+            overflow: hidden;
+        }
+
+        .display-previous {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1rem;
+            margin-bottom: 5px;
+            min-height: 20px;
+        }
+
+        .btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            height: 60px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-clear {
+            background: rgba(255, 59, 48, 0.7);
+        }
+
+        .btn-clear:hover {
+            background: rgba(255, 59, 48, 0.8);
+        }
+
+        .btn-operator {
+            background: rgba(255, 149, 0, 0.7);
+        }
+
+        .btn-operator:hover {
+            background: rgba(255, 149, 0, 0.8);
+        }
+
+        .btn-equals {
+            background: rgba(52, 199, 89, 0.7);
+            grid-column: span 2;
+        }
+
+        .btn-equals:hover {
+            background: rgba(52, 199, 89, 0.8);
+        }
+
+        .btn-zero {
+            grid-column: span 2;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="calculator-grid">
+            <div class="display">
+                <div class="display-previous" id="previousDisplay"></div>
+                <div class="display-text" id="currentDisplay">0</div>
+            </div>
+            
+            <button class="btn btn-clear">AC</button>
+            <button class="btn btn-clear">C</button>
+            <button class="btn btn-operator">÷</button>
+            <button class="btn btn-operator">×</button>
+            
+            <button class="btn">7</button>
+            <button class="btn">8</button>
+            <button class="btn">9</button>
+            <button class="btn btn-operator">−</button>
+            
+            <button class="btn">4</button>
+            <button class="btn">5</button>
+            <button class="btn">6</button>
+            <button class="btn btn-operator">+</button>
+            
+            <button class="btn">1</button>
+            <button class="btn">2</button>
+            <button class="btn">3</button>
+            <button class="btn btn-equals">=</button>
+            
+            <button class="btn btn-zero">0</button>
+            <button class="btn">.</button>
+        </div>
+    </div>
+
+
+</body>
+</html>
